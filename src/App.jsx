@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { puppyList } from './data';
-
+import './index.css';
 import './App.css';
+
+//https://lighthearted-blancmange-a42a1e.netlify.app link through netlify
 
 function App() {
   const [puppies, setPuppies] = useState(puppyList);
@@ -10,10 +12,10 @@ function App() {
  const featuredPup = puppies.find((puppy) => puppy.id === featPupId);
  console.log(featuredPup);
   return (
-    <div>
+    <div className="app-container">
     {featPupId && (
-      <div>
-      <h2>{featuredPup.name}</h2>
+      <div className="featuredPup">
+      <h2 className="heading">{featuredPup.name}</h2>
       <ul>
         <li>Age: {featuredPup.age}</li>
         <li>Email: {featuredPup.email}</li>
